@@ -1,0 +1,96 @@
+.slider {
+    padding: 0 $padding-l;
+
+    img {
+        width: 100%;
+        height: 80vh;
+        object-fit: cover;
+    }
+}
+
+.dots_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+
+.dots {
+    display: flex;
+    width: 5vw;
+    justify-content: space-around;
+    padding: 1vw;
+
+    .dot {
+
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+        background-color: $menu-color;
+        border-radius: 50%;
+    }
+
+        
+    .active {
+        background-color: $promo1-color
+    }
+}
+
+@mixin promo {
+
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
+    transition: all 150ms ease-in;
+
+
+    a {
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: $bold-text;
+    }
+
+    i {
+        mask-image: url(../img/arrow.svg);
+        display: block;
+        background-color: $heading-color;
+        height: 15px;
+        width: 60px;
+        mask-repeat: no-repeat;
+        margin: 10px 0;
+    }
+
+}
+
+.promo1 {
+    @include promo;
+    background-color: $promo1-color;
+    padding: 7vw 2vw 2vw 2vw;
+    width: 8vw;
+    top: 120px;
+    right: 60px;
+    z-index: 2;
+}
+
+.promo2 {
+    @include promo;
+    background-color: $promo2-color;
+    padding: 12vw 2vw 2vw 2vw;
+    width: 6vw;
+    top: 400px;
+    right: -20px;
+    z-index: 2;
+}
+
+@mixin promo_hover {
+    transform: scale(1.05);
+    transition: all 150ms ease-in;
+}
+
+
+.promo1:hover {
+ @include promo_hover;
+}
+
+.promo2:hover {
+    @include promo_hover;
+}

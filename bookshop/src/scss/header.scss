@@ -1,0 +1,78 @@
+@import "variables";
+
+@mixin menu_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin header_icons {
+    width: 15px;
+    height: 18px;
+    display: block;
+    background-color: $heading-color;
+    mask-repeat: no-repeat;
+    cursor: pointer;
+}
+
+header {
+    background-color: $background-color;
+    position: sticky;
+    top: 0;
+    padding: $padding-m $padding-l;
+    z-index: 10;
+    @include menu_items;
+}
+
+.header_icons {
+    @include menu_items;
+    width: 10vw;
+    position: relative;
+}
+
+.user {
+    mask-image: url(../img/user.svg);
+    @include header_icons;
+}
+
+.search {
+    mask-image: url(../img/search.svg);
+    @include header_icons;
+}
+
+.cart {
+    mask-image: url(../img/shop\ bag.svg);
+    @include header_icons;
+}
+
+.cart_count {
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    font-size: 10px;
+    color: $background-color;
+    padding: 0 4px;
+    border-radius: 50%;
+    background-color: $count-color;
+}
+
+.header_logo {
+    font-size: 24px;
+    font-weight: $bold-text;
+}
+
+.header_menu {
+
+    @include menu_items;
+    width: 30vw;
+
+    a {
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 10px;
+    }
+}
+
+.active {
+        font-weight: $bold-text;
+    }

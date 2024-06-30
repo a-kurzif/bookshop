@@ -1,0 +1,15 @@
+@import "variables";
+@import "header";
+@import "slider";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $heading-color;
+  background-color: $background-color;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
